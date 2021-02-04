@@ -1,0 +1,15 @@
+logging:
+  file:
+    path: logs
+github:
+  owner: owner
+  repo: repo
+  private: false
+  token: token
+artifact:
+  name: artifact.zip
+shell:
+  path: /blog_artifact_update.sh
+  name: blog
+  nginx: /blog
+  artifact: /artifact.zip
