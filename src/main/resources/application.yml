@@ -4,7 +4,7 @@ logging:
 github:
   owner: owner
   repo: repo
-  private: false
+  scope: true
   token: token
 artifact:
   name: artifact.zip

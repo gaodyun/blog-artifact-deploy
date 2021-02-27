@@ -12,7 +12,10 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class ArtifactService {
@@ -24,8 +27,8 @@ public class ArtifactService {
     @Value("${github.repo}")
     private String repo;
 
-    @Value("${github.private}")
-    private Boolean isPrivate;
+    @Value("${github.scope}")
+    private Boolean scope;
 
     @Value("${github.token}")
     private String token;
@@ -48,8 +51,9 @@ public class ArtifactService {
     public void updateArtifact() {
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
 
-        if (isPrivate) {
-            restTemplateBuilder.defaultHeader("Authorization", "Token " + token);
+        if (scope) {
+            restTemplateBuilder = new RestTemplateBuilder().
+                    defaultHeader("Authorization", "Token " + token);
         }
 
         RestTemplate restTemplate = restTemplateBuilder.build();

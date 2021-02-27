@@ -14,7 +14,7 @@ logging:
 github:
   owner: owner  # github owner
   repo: repo  # 仓库名称
-  private: false  # 是否是私有仓库  
+  scope: true  # 是否需要作用域，也可以理解为是否需要传递token，比如下载artifact文件就需要actions作用域  
   token: token  # 私有仓库需要配置正确的token
 artifact:
   name: artifact.zip  # 下载到本地的artifact文件名
