@@ -85,6 +85,6 @@ public class Artifact implements Comparable<Artifact> {
 
     @Override
     public int compareTo(Artifact artifact) {
-        return (0 - DateUtils.truncatedCompareTo(this.updatedDate, artifact.updatedDate, Calendar.SECOND));
+        return (-DateUtils.truncatedCompareTo(this.updatedDate, artifact.updatedDate, Calendar.SECOND));
     }
 }

@@ -53,7 +53,7 @@ public class ArtifactService {
 
         if (scope) {
             restTemplateBuilder = new RestTemplateBuilder().
-                    defaultHeader("Authorization", "Token " + token);
+                    defaultHeader("Authorization", "Bearer " + token);
         }
 
         RestTemplate restTemplate = restTemplateBuilder.build();

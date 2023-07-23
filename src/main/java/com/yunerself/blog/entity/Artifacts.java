@@ -1,17 +1,21 @@
 package com.yunerself.blog.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Artifacts {
-    private Integer total;
+
+    @JsonProperty(value = "total_count")
+    private Integer totalCount;
     private List<Artifact> artifacts;
 
-    public Integer getTotal() {
-        return total;
+    public Integer getTotalCount() {
+        return totalCount;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     public List<Artifact> getArtifacts() {
@@ -25,7 +29,7 @@ public class Artifacts {
     @Override
     public String toString() {
         return "Artifacts{" +
-                "total=" + total +
+                "totalCount=" + totalCount +
                 ", artifacts=" + artifacts +
                 '}';
     }
